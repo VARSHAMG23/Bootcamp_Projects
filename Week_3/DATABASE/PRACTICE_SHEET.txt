@@ -1,0 +1,123 @@
+      DDL
+    ****CREATE TABLE****
+    CREATE TABLE MOVIE(
+    MOV_ID NUMBER(5) PRIMARY KEY,
+    MOV_NAME VARCHAR(25))
+    Table created.
+
+   ****** CREATE COPY OF TABLE ******
+   SQL> CREATE TABLE PICTURE AS SELECT * FROM MOVIE;
+   Table created.
+   SQL> DESC PICTURE;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- -------------------
+ MOV_ID                                             NUMBER(5)
+ MOV_NAME                                           VARCHAR2(25)
+
+**** TO DELETE TABLE ****
+SQL> DROP TABLE EMP2; # DELETES TABLE TEMP
+Table dropped.
+SQL> SELECT * FROM RECYCLEBIN; 
+
+#TO RESTORE DELETED TABLE
+SQL> FLASHBACK TABLE EMP2 TO BEFORE DROP; 
+Flashback complete.
+SQL> DROP TABLE EMP2;
+Table dropped.
+
+#TO DELETE TABLE PERMANENTLY
+SQL> PURGE TABLE EMP2; 
+Table purged.
+
+#TO DELETE RECORDS ONLY ,STRUCTURE REMAINS
+SQL> TRUNCATE TABLE EMP1; 
+Table truncated.
+SQL> SELECT * FROM EMP1; #STRUCTURE  REMAINS 
+no rows selected
+SQL> DESC EMP1;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- -------------------
+ EMPNO                                              NUMBER(4)
+ ENAME                                              VARCHAR2(10)
+ JOB                                                VARCHAR2(9)
+ MGR                                                NUMBER(4)
+ HIREDATE                                           DATE
+ SAL                                                NUMBER(7,2)
+ COMM                                               NUMBER(7,2)
+ DEPTNO                                             NUMBER(2)
+
+#RENAME TABLE
+SQL> RENAME MOVIE TO MOVIES; 
+Table renamed.
+SQL> DESC MOVIES;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- -----------------
+ MOV_ID                                    NOT NULL NUMBER(5)
+ MOV_NAME                                                VARCHAR2(25)
+
+# TO ADD NEW COLUMN TO TABLE
+SQL> ALTER TABLE MOVIES ADD ACTOR VARCHAR(25); 
+Table altered.
+SQL> DESC MOVIES;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ------------
+ MOV_ID                                    NOT NULL NUMBER(5)
+ MOV_NAME                                           VARCHAR2(25)
+ ACTOR                                                       VARCHAR2(25)
+
+# TO DROP COLUMN
+SQL> ALTER TABLE MOVIES DROP COLUMN ACTOR; 
+Table altered.
+SQL> DESC MOVIES;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- -------------------
+ MOV_ID                                    NOT NULL NUMBER(5)
+ MOV_NAME                                                VARCHAR2(25)
+
+# TO RENAME COLUMN NAME
+SQL> ALTER TABLE MOVIES RENAME COLUMN MOV_NAME TO MNAME; 
+Table altered.
+SQL> DESC MOVIES;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- -----------------------
+ MOV_ID                                    NOT NULL NUMBER(5)
+ MNAME                                              VARCHAR2(25)
+
+DML
+#TO INSERT VALUES INTO TABLE
+SQL> INSERT INTO MOVIES VALUES(2,'APPU'); 
+1 row created.
+SQL> SELECT * FROM MOVIES;
+    MOV_ID MNAME
+---------- -------------------------
+         1 ARASU
+         2 APPU
+#UPDATE DATA INSIDE TABLE
+SQL> UPDATE MOVIES SET MNAME='MOURYA' WHERE MOV_ID=1; 
+1 row updated.
+SQL> SELECT * FROM MOVIES;
+    MOV_ID MNAME
+---------- -------------------------
+         1 MOURYA
+         2 APPU
+
+# DELETE SPECIFIC ROW
+SQL> DELETE FROM MOVIES WHERE MOV_ID=1; 
+1 row deleted.
+SQL> SELECT * FROM MOVIES;
+    MOV_ID MNAME
+---------- -------------------------
+         2 APPU
+#TO SAVE DATA
+SQL> COMMIT; 
+Commit complete.
+SQL> INSERT INTO MOVIES VALUES(3,'AJAY'); # THIS WILL NOT BE DISPLAYED IF IT IS NOT COMMITED
+1 row created.
+
+#DISPLAYS ONLY COMMITED STATEMENTS HERE ONLY ID 2 IS COMMITED
+SQL> ROLLBACK; 
+Rollback complete.
+SQL> SELECT * FROM MOVIES;
+    MOV_ID MNAME
+---------- -------------------------
+         2 APPU

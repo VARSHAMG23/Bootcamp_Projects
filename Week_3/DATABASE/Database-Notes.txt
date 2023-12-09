@@ -1,0 +1,601 @@
+Q> what is data and information?
+Q> what is database?
+Q> what is DBMS?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Unit - 1
+
+Data: 
+-> collection of raw facts.
+-> may or may not be meaningful.
+-> input to any system can be treated as data.
+-> understanding is difficult.
+
+
+Information:
+-> processed form of data.
+-> always meaningful.
+-> output- after processing system is information.
+-> understanding is easy.
+
+
+A store has records of daily sales transactions.
+Here are some raw data points:
+Transaction 1: Date - 2023-12-01, Sales - $500
+Transaction 2: Date - 2023-12-02, Sales - $700
+Transaction 3: Date - 2023-12-03, Sales - $900
+
+Information:
+
+By analyzing this data, the store manager derives useful insights:
+The store's sales have increased by an average of $200 daily over the last three days.
+December 3rd recorded the highest sales of $900 compared to the previous days.
+
+
+
+
+
+What is database?
+the place where we store the data in the form of tables or documents 
+it is a container to store data.
+
+what is DBMS ?
+A database management system (DBMS) is system software for creating and managing databases. A DBMS makes it possible for end users to create, protect, read, update and delete data in a database. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Why we need database?
+->Data Organization: 
+Databases provide structured storage for data. They organize information into tables, rows, and columns, making it easier to manage and retrieve specific data efficiently.
+
+->Data Accessibility:
+They enable multiple users to access and manipulate data concurrently, ensuring that authorized users can retrieve and modify data as needed.
+
+->Data Integrity and Consistency:
+Databases enforce rules and constraints to ensure that data remains consistent and accurate. This includes preventing duplicate entries, enforcing data validation rules, and maintaining integrity across different parts of the database.
+
+->Security: 
+Databases implement security measures to control access levels, protecting sensitive information from unauthorized access or modification. This includes user authentication, encryption, and access control mechanisms.
+
+->Backup and Recovery: 
+Databases often include backup and recovery mechanisms, ensuring that data can be restored in case of accidental deletion, corruption, or system failures.
+
+
+
+
+
+
+
+
+
+
+
+
+Types of DBMS:
+-->HDBMS - Hierarchical database management system.
+-  it stores the data in the form of tree structure.
+- parent-child relationships.
+- ex: Company details
+
+-->NDBMS - Network database management system
+- NDBMS stands for Network Database Management System,organizes data in a network model
+- form of graph
+- ex: Google Map
+
+-->ODBMS - Object database management system
+-it stores the data in the form of object.
+- ex: java 
+
+-->RDBMS - Relational Database management system
+- it stores the data in the form of tables.
+- ex: Oracle DB, mySQL, MS Access & SQL server
+
+---------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+Q> What is SQL?
+-SQL: Structured query language 
+-mainly designed for RDBMS and helps us to store, retrieve, manage the data inside the RDBMS (database).
+→ It was introduced by Donald Chamberlin & Raymond Boyce in 1990
+→ It is not case sensitive.
+
+
+
+
+
+
+
+Q> what is no-SQL?
+No SQL: Not only SQL which is used for non-relational database which helps us to store the data in the form of document.
+Example: Non RDBMS, mangoDB, Casandra, cauchBD, reddis.
+
+--------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+What is TABLE ?
+→ Is an entity / object.
+→ Table is combination of rows and column.
+→ Column is also known as attributes or field.
+→ A single entry in a table is known as record or tuple. 
+→ we use cells store the data.
+
+---------------------------------------------------------------------------------------
+
+Chapter-1: Windows commands
+--> show command:
+--used to display the default pagesize and linesize inside the database.
+-- ex: show pages linesize
+-- default 200
+
+--> set command:
+--used to set the length of page size and line size inside the database.
+--It is not permanent change 
+--ex: set pages 200 lines 200
+
+--> cl scr: Clear Screen
+--Full form is clear screen 
+--use to get one fresh page.
+
+-->desc: Full form is description
+→ Displays the table structure
+→ table structure includes column name \ attributes,constraint and data type
+
+-->ed: Full form is editor
+--If you have any change in the query we can make use of ed. 
+--call ed inside the server the Notepad gets open. 
+--Change the query inside the Notepad and save it. 
+--Now the query saved and display in the server, to execute the edited query use (/)
+
+---------------------------------------------------------------------------------------
+
+Chapter 2: Constraints
+
+CONSTRAINTS
+→ It is a rule or condition which is applied while creating a table. 
+→ It will Limit the value that can enter into the table. 
+→ Constraints are not mandatory while creating the table but datatype is mandatory.
+
+Types of constraints 
+1) Not null 
+2) Unique 
+3) Primary key 
+4) Foreign key 
+5) Check
+
+1) Not null: Used to avoid the null values.
+Example: Roll no, branch, name.
+
+2) Unique: Used to avoid duplicate values. 
+Example: roll no
+
+3) Primary key: Combination of not null and unique. 
+→ ****Used for unique Identification of records in table **** 
+→ Only one primary key for one table more than one primary key will not be allowed by server. 
+→ It is highly recommended.
+
+4) Foreign key: Also known as referential integrity constant.
+→ It is used to build a relation from one table to another table. 
+→ It allows duplicates and null value. 
+→ We can have a more than one foreign key in a table. 
+→ The primary key table -parent table or master and foreign key in a table- child table. 
+Example: ( t_id, hr_id 
+
+5) Check: Used to limit the value that enter into the table. 
+→ It is like a condition it allows the value which satisfy the condition or else it will reject.
+
+→ Null = null is nothing but empty space inside the cell. 
+If you don't pass any data into the cell that will be considered as a null value
+
+---------------------------------------------------------------------------------------
+
+Chapter 3 : Datatypes
+
+Datatype: Used to specify the type of data to be stored. 
+
+Types: 
+1) Char 
+2) varchar/varchar2 
+3) Number 
+4) Date 
+5) Large objects 
+5.1) CLOB: Character large object 
+5.2) BLOB: Binary large object
+
+1) char:
+--it stores alphanumeric (combination if both alphabets and numbers) 
+→ it stores upto 2000character.
+→ 1t follows fixed length memory allocation.
+→ characters must be enclosed within ' ',
+→ 1f we try to store the data less than the given size there will be memory wastage. 
+→ 1f we try to store the data more than the given size there will be data loss.
+ex : pan-number char(10), usn char(10) etc…
+
+2) varchar: it stores alphanumeric (combination of both alphabets and numbers)
+→ 1t stores upto 2000ch.
+→ it follows variable length memory allocation.
+→ Characters must be enclosed within ' '.
+→ 1f we try to store the data less than the given size there will be no memory wastage because 
+it follows variable length memory allocation.
+→ 1f we try to store the data more than the given size there will be data loss.
+ex: studentname varchar(15), email varchar(20), address varchar(30).
+
+varchar2: it is advance version of varchar which can store upto 4000 character.\
+
+3) number: - used to store number type of data.
+syntax: number (precision, scale)
+
+PRECISION: number of digits used to store as an integer value.
+→store upto 1-38 digits.
+
+SCALE: used to store the decimal values within the precision.
+→scale is not mandatory.
+→default value of scale is 0.
+
+4) date:
+The default format of date in oracle is
+(dd-mon-yy) or (dd-mon-yyyy)
+(03-MAY-23) or (03-MAY-2023)
+
+5) Large Objects:
+CLOB: character large object: 
+used to store the characters that are too long upto 4gb.
+ex: xml file, ecma script etc....
+
+BLOB: Binary Large Object: 
+used to store images, mp3, mp4 which is converted into binary values
+→stores upto 4 gb.
+
+--------------------------------------------------------------------------------------
+
+Chapter 4:CATEGORIES-COMMANDS-LANGUAGES-STATEMENTS-SUBSET IN SQL
+
+DQL: Data Query Language → [select]
+DDL: Data Definition Language → [create, drop, truncate, rename, alter]
+DML: Data Manipulation Language→ [Insert, Update, Delete]
+TCL: Transaction Control Langugage→ [commit, rollback, savepoint]
+DCL: Data Control Language→ [grant, revoke]
+
+Data query language DQL: Used to fetch the data from database using select statements.
+Select: Used to select or retrieve the data from database.
+
+We can retrieve the data by three different ways 
+1. Projection 
+2. Selection 
+3. Joins
+
+PROJECTION: Retrieve the data just by selecting columns or attributes is known as projection 
+Syntax: Select column names from table name 
+
+Order of execution 
+1) From 
+2) Select
+
+1) Write a query to display all the tables in a database?
+→ Select * from tab;
+
+2) WAQTD all the detail of employee ? 
+→ Select * from emp;
+ 
+3) WAQTD all the detail of department table ? 
+→ Select * from dept; 
+
+4) WAQTD employee name Department number and salary ? 
+→ Select ename,deptno,sal from emp; 
+
+5) WAQTD all the details of salgrade table ?
+→ Select * from salgrade;
+
+6) WAQTD employee name empno designation of the employee with his salary ?
+→ Select ename,empno,job,sal from emp;
+
+--------------------------------------------------------------------------------------
+
+-->DISTINCT: 
+→ used to remove duplicates.
+-> we can have only one distinct keyword in select statements.
+
+1) WAQTD unique job ?
+→ Select distinct job from emp;
+
+2) WAQTD unique salary ?
+→ Select distinct sal from emp;
+
+------------------------------------------------------------------------------------
+
+ALIASING: used to rename column name.
+→ it is not permanent change.
+
+Aliasing can be done in 3 ways.
+1)using (as) ( old-column-name as alias-name)
+2)using (space) (old-column-name alias-name)
+3)using (" ") (old-column-name "ALIAS-NAME")
+
+1) WAQTD employee name,salary and his annualsal?
+→ Select ename,sal,sal*12 annualsal from emp;
+
+2) WAQTD employee name, salary and his half-term salary?
+→ Select ename,sal,sal*6 halfterm from emp;
+
+--------------------------------------------------------------------------------------
+
+SELECTION: retrieving the data by selecting both column and rows is known as selection
+Syntax: select column_names from tablename where [condition]
+
+Order of execution 
+1. From 
+2. Where (excutes row by row process)
+3. Select
+Note: where clause is used to filter the records.
+
+1. WAQTD details of smith (1 row)
+→ Select * from emp where ename = ‘SMITH’;
+
+2. WAQTD details of employees who are earning 2975 (1 row)
+→ Select * from emp where sal = 2975;
+
+3. WAQTD ename and hiredate if employee hired on ’03-DEC-81’. (2 row)
+→ Select * from emp where hiredate = ’03-MAY-81’;
+
+4. WAQTD ename and job if employee works as salesman?
+→ Select ename,job from emp where job = ‘SALESMAN’;
+
+5. WAQTD ename and deptnumber if employee works in deptno 20 (4 row)
+→ Select ename,job from emp where deptno = 20;
+
+-------------------------------------------------------------------------------------
+
+Chapter 5: Operators
+
+Operator: 
+used to perform operation between operands and operators produce the result.
+Types of opeartors 
+1) Arithmetic operator (+, -, *, /)
+2) Relational / Comparison operator (>, <, >=, <=, =, !=)
+3) Logical operator (and, or, not)
+4) Special operator (is, is not, in, not in, like, not like, between, not between)
+
+1) WAQTD employee name salary and salary after 10% of hike from all the employee ?
+→ select ename,sal,sal+sal*10/100 from emp;
+
+2) WAQTD employee details along with sal after 30% of deduction for allen ?
+→ select emp.*,sal-sal*30/100 as deduction from emp where ename='ALLEN';
+
+-------------------------------------------------------------------------------------
+
+RELATIONAL OPERATOR: used to compare the operands and produce the result.
+
+1) WAQTD employee details if employee is working in dept 10 ?
+→ Select * from emp where deptno = 10;
+
+2) WAQTD employee details if employee earning more than 2000 ?
+→ Select * from emp where sal > 2000;
+
+3) WAQTD employee details if employee earning less than 1000 ?
+→ Select * from emp where sal < 1000;
+
+4) WAQTD employee details who are working as salesman ?
+→ Select * from emp where job = ‘SALESMAN’;
+
+5) WAQTD employee name and salary if the employee earning 2000 or more than 2000 ?
+→ Select ename,sal from emp where sal >= 2000;
+
+6) WAQTD employee name and salary if the employee earning 1000 or less than 1000 ?
+→ Select ename,sal from emp where sal <= 1000;
+
+--------------------------------------------------------------------------------------
+
+LOGICAL OPERATOR: 
+
+And : if all the conditions are satisfied than only we get the result.
+
+1) WAQTD employee details if employee works as salesman in dept 30?
+→ Select * from emp where job = ‘SALESMAN’ and deptno = 30;
+
+2) WAQTD employee name,Job and sal if employee earning more than 2000 as analyst?
+→ Select ename,job,sal from emp where job = ‘ANALYST’ and sal > 2000;
+
+OR: if any of the condition is satisfied the result will be true
+
+1) WAQTD employee name,sal and deptno if employee works in deptno 10 or 20 or 30 or 40 ?
+→ Select ename,sal,deptno from emp where deptno = 10 or deptno = 20 or deptno = 30 or deptno = 40;
+
+2) WAQTD employee details if employee empno is 7902 or 7566 or 7389.
+→ Select * from emp where empno = 7902 or empno = 7566 or empno = 7389;
+
+Not: it gives opposite data.
+1) WAQTD employee details except who works in dept 10 and 20 ?
+→ Select * from emp where not dept = 10 and not dept = 20;
+
+2) WAQTD employee details if employee works in deptno 10 except manager and clerk?
+→ Select * from emp where (dept = 10) and not job = ‘MANAGER’ and not job = ‘CLERK’;
+
+--------------------------------------------------------------------------------------
+
+SPECIAL OPERATOR 
+
+IS: used to evaluate null values.
+Syntax: column name is null.
+
+1) WAQTD employee name Salary,deptno and reporting manager number if they dont earn any 
+salary ?
+→ Select ename,deptno,sal,mgr from emp where sal is null;
+
+2) WAQTD employee details if they dont have any reporting manager.
+→ Select * from emp where mgr is null;
+
+3) WAQRD employee details if they dont earn any commission in deptno 10 and 20.
+→ Select * from emp where comm is null and (deptno = 10) or (deptno = 20;)
+
+IS NOT = used evaluate not null values.
+Syntax: column name is not null.
+
+1) WAQTD employee details if they earn some salary but no commission.
+→ select * from emp where sal is not null and comm is null;
+
+-----------------------------------------------------------------------------------
+
+IN: used to evaluate multiple values in RHS based on specific columns.
+syntax: column-name in (v1,v2.v3,...)
+
+1) WAQTD employee names and deptno if employee works in deptno 10or20or30or40or50 ?
+→ Select ename,deptno from emp where deptno in (10, 20, 30, 40, 50);
+
+2) WAQTD employee details if employee earning more than 2000 as salesman or clerk or manager?
+→ Select * from emp where (sal>2000) and job in ('CLERK', 'MANAGER', 'SALESMAN');
+
+NOT IN:
+1) WAQTD employee details if employee earn more than 2000 and works in deptno 10 or 20 except MANAGER and president.
+→ select * from emp where sal>2000 and deptno in (10,20) and job not in ('MANAGER', 
+'PRESIDENT');
+
+2) WAQTD employee details except who works in deptno 10,30 and 40. 
+→ select * from emp where deptno not in (10,30,40); 
+
+------------------------------------------------------------------------------------
+
+LIKE: used for pattern matching ( for searching particular string )
+Syntax: columnname like ‘pattern’
+There are 2 wildcard
+1) ‘ _ ’: takes only one character 
+2) ‘ % ’: takes no character or one or more character.
+
+1) WAQTD employee name if employee names starts with character 'S'?
+→ Select ename from emp where ename like ‘S%’;
+
+2) WAQTD employee name if employee names ends with character 'R'.
+→ Select ename from emp where ename like ‘%R’;
+
+3) WAQTD employee name if employee names starts with character 'A' or 'S'
+→ Select ename from emp where ename like ‘A%’ or ename like ‘S%’;
+
+4) WAQTD employee name if employee names ends with character 'M' or 'N'.
+→ Select ename from emp where ename like ‘%M’ or ename like ‘%N’;
+
+5) WAQTD employee name if employee names if the last 2nd character is 'I'.
+→ Select ename from emp where ename like ‘%I_’;
+
+6) WAQTD employee name if employee names having exactly 4 characters
+→ Select ename from emp where ename like ‘____’;
+
+7) WAQTD employee name if employee names having at least 1 'A'.
+→ Select ename from emp where ename like ‘%A%’;
+
+8) WAQTD employee name if employee names having at least 2 'A'.
+→ Select ename from emp where ename like ‘%A%A%’;
+
+BETWEEN : used for range purpose.
+syntax - column-name between lower-range (value1) and higher- range(value2);
+
+1) WAQTD ename and salary if the employee earn salary from 1000 to 3000.
+→ Select ename,sal from emp where sal between 1000 and 3000;
+
+2) WAQTD ename and hiredate if employee hired in year 87
+→ Select ename,hiredate from emp where hiredate between ’01-JAN-81’ and ‘31-DEC-81’;
+
+3) WAQTD ename and hiredate if employee hired from 15- DEC-81 to 31-DEC-81.
+→ Select ename,hiredate from emp where hiredate between ‘15- DEC-81’ and ‘31-DEC-81’;
+
+----------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

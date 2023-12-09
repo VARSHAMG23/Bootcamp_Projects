@@ -1,0 +1,209 @@
+Unit-2
+
+DDL
+DDL: Data Definition Language
+→ Used to define the table structure or entity or object.
+→ DDL have direct connection to database because of that connection it is autocommitted. (all are permanent changes)
+
+--> How to create a table ?
+
+→ create table table-name (
+column-name1 datatype (size) constraint,
+column-name2 datatype(size) constraint,
+coulumn-name3 datatype (size) constraint,
+.
+.
+column-n datatype (size) constraint, 
+foreign key (column-name) references parent table-name (column-name)
+)
+
+Ex:
+ create table company(
+ company_id number(5) unique,
+ company_name varchar2(30) not null,
+ emp_id number(3) primary key
+ );
+
+create table employee(
+emp_id number(3),
+emp_name varchar2(20) not null,
+emp_dob date,
+emp_salary number(6) check(length(emp_salary)=6),
+foreign key(emp_id) references company(emp_id)
+);
+
+--> How to create a copy of existing table
+syntax: create table new-table-name as sql statement;
+
+1) create table emp1 as select * from emp;
+2) create table emp2 as select empno, ename, job from emp;
+3) create table emp3 as select * from emp where job='MANAGER';
+4) create table emp4 as select * from emp where 1=2; (to create structure of the table 
+without any records write a false statement in where clause).
+
+--------------------------------------------------------------------------------------
+
+Drop: used to delete the table.
+syntax: drop table table-name;
+ex: - drop table emp3;
+once the table is dropped relation, structure etc... will get dropped and present in recycle bin.
+
+note: to check the tables present in recycle bin (Select * from recyclebin;)
+
+once the table present in recyclebin you have 2 options
+1) restore using flashback
+2) permanently delete using purge
+
+Flashback: used to restore the table or object if and only if the table present in recyclebin.
+syntax: flashback table table-name to before drop;
+ex: flashback table emp3 to before drop;
+
+Purge: used to permanently delete the table/object if and only if the if and only if the table present in recyclebin.
+syntax: purge table table-name;
+ex: purge table emp3;
+
+---------------------------------------------------------------------------------------
+
+Truncate: 
+→ used to delete the records present in the table.
+→ all the records get deleted but table structure remains same.
+→ we cannot restore the records, it is permanently deleted.
+syntax: truncate table table-name;
+ex: truncate table emp2;
+
+---------------------------------------------------------------------------------------
+Rename: → used to rename the table-name
+syntax: rename old-table-name to new-table-name;
+ex: - rename emp3 to emp03;
+---------------------------------------------------------------------------------------
+Alter: using alter we can change or modify the table structure.
+
+1) add a column 
+syntax: alter table table-name add column-name datatype (size) constraint;
+ex: alter table emp03 add email varchar2(20) unique;
+
+2) drop a column 
+syntax: alter table table-name drop column column-name;
+ex: alter table emp03 drop column job;
+
+3) rename a column-name
+syntax: alter table table-name rename column old-col-name to new-col-name;
+ex: alter table emp03 rename column empno to e_id;
+
+4) rename a table-name using alter
+syntax: alter table old-table-name rename to new-table-name; 
+ex: alter table emp03 rename to emp3;
+
+5) change datatype(size): we can change the datatype (size) if and only if the column is 
+empty.
+syntax: alter table table-name modify column-name datatype(size);
+ex: alter table emp3 modify email number(10);
+
+---------------------------------------------------------------------------------------
+
+DML
+DML: → it is used to manage or manipulate the data inside the database.
+
+We have three statements
+1) Insert into
+2) Update
+3) Delete
+
+→ DML statements do not have direct connection to database so that it is not permanent 
+change to make it permanent change we must use TCL statements.
+→ DML statements are not auto commited.
+
+Insert into: used to insert the values/data into the table.
+syntax-1: insert into table-name values (value1, value2, ....);
+ex: insert into product values (2, 'LAPTOP', '01-JAN-1988')
+
+syntax-2: insert into table-name (column-1, column-2, ...) values (value1, value2, ...);
+ex: insert into product (pno, pname) values (3, 'WATCH');
+
+---------------------------------------------------------------------------------------
+
+Update: used to update/change the values inside the database.
+syntax: update table-name set <expression> where <conditionn>;
+ex: update product set manf='01-JAN-23' where pno=1;
+
+--------------------------------------------------------------------------------------
+
+Delete: → used to delete the specific record or all the records inside the table.
+→ table records get deleted but structure remains same.
+syntax: delete from table-name where <conditionn>;
+ex: delete from emp3 where ename='SCOTT';
+
+--------------------------------------------------------------------------------------
+
+TCL
+TCL: used to control the transaction done by DML statements.
+
+TCL is applicable for only DML statements.
+1) commit
+2) Rollback
+3) Savepoint
+
+1) commit: used to save the transaction permanently which is done by DML
+statements.
+syntax: commit; (ctrl+S)
+
+2) rollback: used to get back the records upto saved transaction.
+syntax: rollback; (ctrl+Z)
+
+3) savepoint: if a user don’t want to store all the new changes, then he makes use of
+savepoint.
+→ used as restoration point.
+syntax: savepoint savepoint-name;
+syntax: rollback to savepoint-name;
+
+------------------------------------------------------------------------------------
+
+DCL
+we have two statements:
+1) grant
+2) Revoke
+
+1) Grant: used to give the permission to user.
+syntax: grant sql-statement on table-name to user;
+Ex: grant select on emp to prem; (or give grant all to perform operation with any statements)
+
+2) Revoke: used to take back the permission from user.
+syntax: revoke sql-statement on table-name from user;
+Ex: Revoke select on emp from prem;
+
+how to create new user ?
+Step 1) Connect
+username: sys as sysdba
+password: tiger
+
+note: (sys is a database administrator who have the authority to handle other user
+like change the password or giving the permission to login to new user account etc...)
+
+Step 2) syntax to create new user
+create user user-name identified by password;
+ex: create user prem identified by gupta;
+Step 3) grant resource, connect to username;
+
+grant select on emp to john;
+select * from scott.emp;
+
+ex: grant resource, connect to prem; 
+(the permission is given by sys to login to that new user called prem)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
