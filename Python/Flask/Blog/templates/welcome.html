@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>welcome</title>
+    <style>
+      * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+ .container{
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  /* background: linear-gradient(#141e30, #243b55); */
+ 
+
+}
+body{
+  background-image: url('/static/images/blog.jpg');
+  background-size:cover;
+            width: 100vw;
+            
+}
+.box {
+  width: 500px;
+  border-top: 30px solid black;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-top: 5%;
+
+  
+  
+
+}
+.box h2 {
+  color: #fff;
+  background: rgb(124, 124, 219);
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: 700;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.box ul {
+  position: relative;
+  background: #fff;
+}
+
+.box ul li {
+  list-style: none;
+  padding: 10px;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 5px 10px black;
+  transition: transform 0.5s;
+  
+
+}
+
+.box ul li span {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+/* <!--  background:black;--> */
+  color: #fff;
+  display: inline-block;
+  /* border-radius: 10%; */
+  margin-right: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  transform: translateY(-2px);
+
+
+}
+.box ul li span {
+  background: #fff;
+  color: black;
+  width:100%;
+  /* rgb(124, 124, 219) */
+}
+.button{
+    background-color:white;
+    border-radius: 10px;
+    width: 120px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    display: inline;
+    color: white;
+    margin:20px;
+    box-shadow: 5px grey;
+}
+.button a{
+  text-decoration: none;
+  color:black;
+}
+.button:hover{
+    background-color:rgb(142, 139, 139);
+}
+.navbar{
+            background:black;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            padding-right: 10px;
+            padding-left: 10px;
+            height: 70px;
+            /* margin-top: -10px; */
+            text-decoration: none;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
+            
+        }
+        .navdiv {
+        
+            text-decoration: none;
+          
+        }
+        button{
+            background-color: white;
+            margin-left: 10px;
+            border-radius: 10px;
+            padding: 10px;
+            width:90px;
+            margin-top: 10px;
+        }
+        button a{
+            color: black;
+            font-weight: bold;
+            font-size: 17px;
+            text-decoration: none;
+        }
+        #delete{
+          background-color: red;
+          color: white;
+          margin-bottom: 60px;
+          display: inline-block;
+        }
+        .navdivbutton {
+                display:flex;
+                justify-content: space-around;
+                margin-bottom: 10px;
+        }
+        .update{
+          margin-top: -10px;
+        }
+    </style>
+
+</head>
+
+<body >
+    
+  <nav class="navbar">
+    <div class="navdiv" > <button><a href="/">Home</a></button>
+    
+    </div>
+    <div class="navdivbutton">
+      <div class="update"> <button class="button" type="submit" ><a href=http://192.168.43.63:5000/update/{{message['user_id']}}>Update</a></button></div>
+     
+      <div class="update"><button class="button"  type="submit" id="delete" ><a href=http://192.168.43.63:5000/delete/{{message['user_id']}}>Delete</a></button></div>
+    </div>
+   
+</nav>
+    <div class="container">
+      <div class="box">
+        <ul>
+            <!-- <li><span>Id: {{message['user_id']}}</span></li> -->
+            <li><span><h1>{{message['title']}}</h1></span></li>
+            <li><span>AUTHOR: {{message['uname']}}</span></li>
+            
+            <li><span style="justify-content: center;"> {{message['content']}}</span></li>
+            
+            <!-- <li>
+              <label for="image">Upload Image:</label>
+              <input type="file" id="image" name="image" accept="image/*">
+          </li> -->
+        </ul>
+       
+        
+    </div>
+    </div>
+</body>
+
+</html>
