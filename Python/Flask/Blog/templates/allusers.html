@@ -1,0 +1,122 @@
+<!-- allusers.html -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Users</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>All Users</h1>
+        {% if message %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>User ID</th>
+                        <th>Username</th>
+                        
+                        <th>Actions</th> 
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in message %}
+                        <tr>
+                            <td>{{ user.user_id }}</td>
+                            <td>{{ user.uname }}</td>
+                            
+                            <td><a href="{{ url_for('user_details', user_id=user.user_id) }}">View Details</a></td>
+                           
+                          
+                            
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No users found.</p>
+        {% endif %}
+    </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Users</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Bootstrap default background color */
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: #007bff; /* Bootstrap primary color */
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6; /* Bootstrap table border color */
+        }
+
+        tr:hover {
+            background-color: #f8f9fa; /* Bootstrap default background color on hover */
+        }
+
+        a {
+            color: #007bff; /* Bootstrap primary color for links */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>All Users</h1>
+        {% if message %}
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>User ID</th>
+                        <th>Username</th>
+                        <!-- Add more columns as needed -->
+                        <th>Actions</th> <!-- New column for actions -->
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in message %}
+                        <tr>
+                            <td>{{ user.user_id }}</td>
+                            <td>{{ user.uname }}</td>
+                            <td><a class="btn btn-info" href="{{ url_for('user_details', user_id=user.user_id) }}">View Details</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No users found.</p>
+        {% endif %}
+    </div>
+
+    <!-- Add Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+

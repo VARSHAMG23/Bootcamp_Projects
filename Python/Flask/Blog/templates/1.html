@@ -1,19 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <ul>
+    <title>Welcome</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
 
-    
-    {% for item in message %}
-     <li>{{item}}
-     
-     </li>
-    {% endfor %}
-</ul>
-</body>
-</html>
+        body {
+            background-image: url('/static/images/blog.jpg');
+            background-size: cover;
+            width: 100vw;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .box {
+            width: 500px;
+            border-top: 30px solid black;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            margin-top: 5%;
+        }
+
+        .box h2 {
+            color: #fff;
+            background: rgb(124, 124, 219);
+            padding: 10px 20px;
+            font-size: 20px;
+            font-weight: 700;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .box ul {
+            position: relative;
+            background: #fff;
+        }
+
+        .box ul li {
+            list-style: none;
+            padding: 10px;
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 5px 10px black;
+            transition: transform 0.5s;
+        }
+
+        .box ul li span {
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            color: #fff;
+            display: inline-block;
+            margin-right: 10px;
+            font-size: 12px;
+            font-weight: 600;
+            transform: translateY(-2px);
+        }
+
+        .box ul li span {
+            background: #fff;
+            color: black;
+            width: 100%;
+        }
+
+        .button {
+            background-color: white;
+            border-radius: 10px;
+            width: 120px;
+            height: 50px;
+            align-items: center;
+            justify-content: center;
+            display: inline;
+            color: white;
+            margin: 20px;
+            box-shadow: 5px grey;
+        }
+
+        .button a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .button:hover {
+            background-color: rgb(142, 139, 139);
+        }
+
+        .navbar {
+            background: black;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            padding-right: 10px;
+            padding-left: 10px;
+            height: 70px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .navdiv {
+            text-decoration: none;
+        }
+
+        button {
+            background-color: white;
+            margin-left: 10px;
+            border-radius: 10px;
+            padding: 10px;
+            width: 90px;
+            margin-top: 10px;
+        }
+
+        button a {
+            color: black;
+            font-weight: bold;
+            font-size: 17px;
+            text-decoration: none;
+        }
+
+        #delete {
+            background-color: red;
+            color: white;
+            margin-bottom: 70px;
+            display: flex;
+            justify-content: center;
+            margin: 0px;
+            margin-right: 0px;
+        }
+
+        #deleteaccount {
+            background-color: red;
+            color: white;
+            margin-bottom: 60px;
+            display: inline-block;
+        }
+
+        .navdivbutton {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 10px;
+        }
+
+        .update {
+            margin-top: -10px;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .navbar a {
+            float: left;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0px;
+        }
+
+        .navbar a:hover,
+        .dropdown:hover .dropbtn {
+            background-color: red;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 120px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="/">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn">More <i class="fa fa-caret-down"></i></button>
+            <div class="dropdown-content">
+                <a href="http://192.168.43.63:5000/update/{{message['user_id']}}">Update</a>
+                <a href="http://192.168.43.63:5000/edit/{{message['user_id']}}">Edit</a>
+                <a href="http://192.168.43.63:5000/delete/{{message['user_id']}}">Delete</a>
+                <a href="http://192.168.43.63:5000/deleteaccount/{{message['user_id']}}">Delete account</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="box">
+            <ul>
+                <li><span><h1>{{message['title']}}</h1></span></li>
+                <li><span>AUTHOR: {{message['uname']}}</span></li>
+                <li><span style="justify-content: center;"> {{message['content']}}</span></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Add Bootstrap

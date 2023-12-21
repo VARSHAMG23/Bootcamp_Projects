@@ -1,0 +1,12 @@
+.footer {
+    width: 100%;
+    background-color: blueviolet;
+    color: black;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
