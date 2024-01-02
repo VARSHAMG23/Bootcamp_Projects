@@ -14,6 +14,7 @@ import Even from './Components/Even.js';
 import Printeven from './Components/Printeven.js';
 import Welcomeadmin from './Components/Welcomeadmin.js';
 import MyList from './Components/MyList.js';
+import ExampleForLifeCycle from './Components/ExampleForLifeCycle.js';
 
 function App() {
   return (
@@ -36,7 +37,7 @@ function App() {
      <Printeven number="3"/>
      <Welcomeadmin name="Varsha" />
      <MyList/>
-     
+     <ExampleForLifeCycle /> 
    
      
      
