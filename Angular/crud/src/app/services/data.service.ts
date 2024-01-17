@@ -1,32 +1,64 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-  //myUrl="http://localhost:3000/users"
+  //Declares variables to store user email and user id.
   userEmail:any;
-  constructor(private http:HttpClient) { }
+  userId:any;
 
+  
 
-//To Get Data
-getData(url:any){
- return  this.http.get(url)
-}
+  constructor(private http:HttpClient) { }  
 
-//To Post Data
-postData(url:any,data:any){
-  return this.http.post(url,data)
-}
-getDetails(email:any){
- this.userEmail=email;
- console.log(this.userEmail)
-  // return  this.http.get(email)
- }
+  //Method to fetch data from a specified URL using the GET method. Returns an Observable.
 
- receiveDetails(){
-  return this.userEmail;
- }
+  getData(url:any):Observable<any>{
+    
+    return this.http.get<any>(url);
+  }
+
+  //Method to post data to a specified URL using the POST method.
+
+  postData(url:any,data:any){
+    return  this.http.post(url,data);
+  }
+
+  // Method to store user details 
+
+  getDetails(email:string,id:string){
+
+    this.userEmail=email;
+    console.log('got email');
+    this.userId=id
+    
+  }
+
+  //Method to retrieve stored user details.
+
+  receivedDetails():any{
+    console.log('sent');
+    return [this.userEmail,this.userId]
+    
+  }
+  //Method to update data using the PUT method.
+
+  putData(url:any,data:any){
+
+   return this.http.post(url,data);
+  }
+
+  //Method to delete content from a specified URL using the DELETE method
+
+  deleteContent(url:any){
+  
+    return this.http.delete(url);
+
+  }
 
 }

@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   //Initialize FormGroup , Form is of type FormGroup
   myForm!: FormGroup;
   constructor(private fb:FormBuilder,private router:Router,private dataService:DataService,private http:HttpClient ) {
-    
+  // Create a FormGroup with email and password fields
     this.myForm=this.fb.group({
 
       //Specifiying Feilds and Froming Groups
@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
 
    }
   ngOnInit(): void {
-
+    // Fetch user data from the specified URL when the component initializes
     this.dataService.getData(this.myUrl).subscribe(response => {
       this.userData=response;
       console.log(this.userData);
@@ -38,14 +38,16 @@ export class LoginComponent implements OnInit {
     let user=false;
     console.log(this.myForm.value)
 
-    // this.router.navigateByUrl('/**')
     for(let data of this.userData){
       if(data.email===this.myForm.value['email']){
         user=true;
         if(data.password==this.myForm.value['password']){
           console.log("Success");
           alert("Login Success");
-          this.dataService.getDetails(this.myForm.value['email'])
+
+          // Call the 'getDetails' method from 'dataService' to store user details
+
+          this.dataService.getDetails(this.myForm.value['email'],data.id)
           this.router.navigateByUrl('/userpage')
       }
       else{

@@ -11,7 +11,7 @@ import { DataService } from '../services/data.service';
 })
 export class SignupComponent implements OnInit {
 
-  //Initialize FormGroup , Form is of type FormGroup
+//Initialize FormGroup , Form is of type FormGroup
   myForm!: FormGroup;
   userData:any;
   myObj={
@@ -23,6 +23,13 @@ export class SignupComponent implements OnInit {
     password:''
 }
 myUrl="http://localhost:3000/users"
+
+//User Details
+myUrlDetails="http://localhost:3000/details"
+myUserDetails={
+  email:'',
+  list:[]
+}
 
   constructor(private fb:FormBuilder, private router:Router,private dataService:DataService ) {
     
@@ -51,25 +58,30 @@ myUrl="http://localhost:3000/users"
   }
 
   onSubmit(): any {
+    //variable is used to check whether the user already exists.
     let user=false;
+    // Iterate through each data in 'userData'
     for (let data of this.userData) {
+    // Check if the email in the current 'data' matches the email from the form
      if (data.email===this.myForm.value['email']) {
          user=true;
          alert("User already exists")
          break;
     }
   }
+  // user does not exis
   if(!user){
-
+    
     this.dataService.postData(this.myUrl,this.myForm.value).subscribe();
+     // Set the email property of 'myUserDetails' with the email from the form
+    this.myUserDetails.email = this.myForm.value['email'];
+     // Make a POST request to add user details to 'myUrlDetails' using 'myUserDetails'
+    this.dataService.postData(this.myUrlDetails,this.myUserDetails).subscribe();
     alert("Account Created Successfully")
   }
      
     //  console.log(this.myForm.value)
      this.router.navigateByUrl('/login')
   }
-
-
-
 
 }

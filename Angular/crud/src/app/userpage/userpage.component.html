@@ -1,6 +1,30 @@
-<p>Welcome to HOME PAGE</p>
-<div *ngFor="let details of userDetails[0].list">
- 
-<h1>{{details}}</h1>
 
+
+<p>Welcome to HOME PAGE</p>
+<button (click)="deleteAccount()">Delete USer</button>
+<div *ngIf="userDetails && userDetails.length > 0">
+
+<!-- Uses *ngFor to iterate over the list in the first element of userDetails array. i is the index of the current iteration. -->
+  <div *ngFor="let details of userDetails[0]?.list,let i=index">
+    <div>
+        <h1>{{ details }}</h1>
+        <div *ngIf="details">
+        <button type="submit" (click)="deleteItem(i)">Delete</button>
+        <button type="submit" (click)="updateDisplay(i,details)">Update</button>
+
+        <!-- Display input field and button for updating an item if display is true and index matches displayIndex -->
+
+        <div *ngIf="display && i=== displayIndex">
+        <input type="text" [(ngModel)]="updatingItem"/>
+        <button type="submit" (click)="updateItem()">Submit</button>
+        </div>
+    </div>
+    </div>
+  </div>
 </div>
+<br>
+<!-- Input field for adding a new item to the list -->
+<input type="text" name="task" [(ngModel)]="assign">
+<br>
+<br>
+<input (click)="onClick()" type="button" value="Click Me">
