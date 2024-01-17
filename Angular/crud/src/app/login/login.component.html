@@ -1,0 +1,23 @@
+<p>Login Page</p>
+<!-- Pass Attribute -->
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+
+   
+
+    <!-- alt+shift+ down arrow -->
+    <div>
+        <label for="">Email:</label>
+        <input type="email" id="email" formControlName="email">
+    </div>
+
+
+
+    <div>
+        <label for="">Password:</label>
+        <input type="password" id="password" formControlName="password">
+    </div>
+
+  <div>
+    <button *ngIf="myForm.valid" type="submit">Login</button>
+  </div>
+

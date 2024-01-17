@@ -1,0 +1,20 @@
+/* Tag Level Styling */
+div{
+    background-color: rgb(190, 241, 21);
+    border:3px gray solid;
+    border-radius: 5px;
+}
+
+/* class level Styling */
+.container{
+    background-color: rgb(221, 228, 199);
+    border:3px rgb(18, 18, 19) solid;
+    border-radius: 5px;
+}
+._button{
+    border: 2px black solid;
+    border-radius: 5px;
+    height: 5vh;
+    width: 10%;
+    background-color: green;
+}

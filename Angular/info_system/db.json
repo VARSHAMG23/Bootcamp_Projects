@@ -1,0 +1,25 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "name": "Varsha",
+      "email": "vv@gmail.com",
+      "mobile": 8431159982,
+      "Address": "Banglore"
+    },
+    {
+      "id": "2",
+      "name": "Varshitha",
+      "email": "vv@gmail.com",
+      "mobile": 8431159982,
+      "Address": "Mysuru"
+    },
+    {
+      "id": "",
+      "name": "Sam",
+      "email": "sam@gmail.com",
+      "mobile": 944889904576,
+      "Address": "Chikkmaglur"
+    }
+  ]
+}

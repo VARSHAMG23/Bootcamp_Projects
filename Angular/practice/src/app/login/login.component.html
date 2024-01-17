@@ -1,0 +1,18 @@
+
+<div class="container">
+    <h1 style="color: aliceblue;text-align: center;">Create Account</h1>
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="name" placeholder="Enter Name" >
+    <br>
+    
+    <input type="text" formControlName="email" placeholder="Enter Email">
+    <br>
+    
+    <input type="password" formControlName="password" placeholder="Enter password">
+    
+    <br>
+    <button class="_button" *ngIf="myForm.valid" type="submit">SUBMIT</button>
+</form>
+</div>
+
+

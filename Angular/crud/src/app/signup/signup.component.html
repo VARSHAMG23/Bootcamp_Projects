@@ -1,0 +1,98 @@
+<p>SignUp Page</p>
+
+<!-- <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+
+    <div>
+        <label for="">First Name:</label>
+        <input type="text" id="name" formControlName="firstName">
+    </div>
+
+    <div>
+        <label for="">Last Name:</label>
+        <input type="text" id="name" formControlName="lastName">
+    </div>
+
+    
+    <div>
+        <label for="">Email:</label>
+        <input type="email" id="email" formControlName="email">
+    </div>
+
+    <div>
+        <label for="">Gender:</label>
+        <div>
+            <label for="">Male</label>
+            <input type="radio"value="Male" id="gender" formControlName="gender">
+        </div>
+
+        <div>
+            <label for="">Female</label>
+            <input type="radio" value="Female" id="gender" formControlName="gender">
+        </div>
+        
+    </div>
+
+    <div>
+        <label for="">DOB:</label>
+        <input type="date" id="date" formControlName="dob">
+    </div>
+
+    <div>
+        <label for="">Password:</label>
+        <input type="password" id="password" formControlName="password">
+    </div>
+
+  <div>
+    <button ngIf="myForm.valid" type="submit">SignUp</button>
+  </div>
+
+
+</form> -->
+
+ <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    
+
+    <div>
+        <label for="">First Name: </label>
+        <input type="text" id="fname" formControlName="firstName">
+    </div>
+
+    <div>
+        <label for="">Last Name: </label>
+        <input type="text" id="lname" formControlName="lastName">
+    </div>
+
+    <div>
+        <label for="">Email: </label>
+        <input type="email" id="email" formControlName="email">
+    </div>
+
+    <div>
+        <label for="">Gender:</label>
+        <div>
+        <label for="">Male</label>    
+        <input type="radio" id="gender" value="male" formControlName="gender">
+        </div>
+
+        <div>
+        <label for="">Female</label>    
+        <input type="radio" id="gender" value="female" formControlName="gender">
+        </div>
+    </div>
+
+    <div>
+        <label for="">Date of Birth: </label>
+        <input type="date" id="date" formControlName="dob">
+    </div>
+
+    <div>
+        <label for="">Password:</label>
+        <input type="password" id="password" formControlName="password">
+    </div>
+
+    <div>
+        <button *ngIf="myForm.valid" type="submit">SignUp</button>
+    </div>
+
+</form>
+

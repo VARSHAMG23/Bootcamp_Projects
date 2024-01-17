@@ -1,0 +1,26 @@
+/* app.component.css */
+
+p {
+    font-size: 18px;
+    color: blue;
+  }
+  
+  p.username {
+    font-weight: bold;
+    color: #333; /* Change color as needed */
+  }
+  
+  p.message {
+    color: green;
+  }
+  
+  button.submit {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  button.click {
+    background-color: #008CBA;
+    color: white;
+  }
+  
