@@ -1,121 +1,72 @@
 {
   "users": [
     {
-      "firstName": "Shridhar",
-      "lastName": "Bhat",
-      "email": "bshridhar27@gmail.com",
-      "gender": "male",
-      "dob": "1997/07/27",
-      "password": "bhat",
-      "id": "56bc"
-    },
-    {
-      "id": "805f",
-      "firstName": "var",
-      "lastName": "mg",
-      "email": "1@c",
-      "gender": "female",
-      "dob": "12/04/2023",
-      "password": "1"
-    },
-    {
-      "id": "afe1",
-      "firstName": "karthik",
-      "lastName": "bhat",
-      "email": "karthik@gmail.com",
-      "gender": "male",
-      "dob": "2024-01-05",
-      "password": "karthik123"
-    },
-    {
-      "id": "f3a3",
-      "firstName": "xyz",
-      "lastName": "bhat",
-      "email": "xy@gmail.com",
-      "gender": "male",
-      "dob": "2024-01-04",
-      "password": "xy12345"
-    },
-    {
-      "id": "0bda",
-      "firstName": "Sneha",
-      "lastName": "Bhat",
-      "email": "sneha@gmail.com",
-      "gender": "female",
-      "dob": "2024-01-09",
-      "password": "sneha123"
-    },
-    {
-      "id": "9300",
-      "firstName": "abc",
-      "lastName": "xyz",
-      "email": "xyz@gmail.com",
-      "gender": "female",
-      "dob": "2024-01-03",
-      "password": "xy1234"
-    },
-    {
-      "id": "faf1",
+      "id": "72d7",
       "firstName": "Varsha",
-      "lastName": "MG",
+      "lastName": "M",
       "email": "varshamgvviet@gmail.com",
       "gender": "female",
       "dob": "2001-09-23",
+      "password": "123456"
+    },
+    {
+      "id": "6b48",
+      "firstName": "admin",
+      "lastName": "admin",
+      "email": "admin@gmail.com",
+      "gender": "female",
+      "dob": "2001-05-23",
+      "password": "admin"
+    },
+    {
+      "id": "7fa4",
+      "firstName": "jay",
+      "lastName": "j",
+      "email": "j@gmail.com",
+      "gender": "male",
+      "dob": "2024-01-23",
+      "password": "123456"
+    },
+    {
+      "id": "874f",
+      "firstName": "James",
+      "lastName": "Scott",
+      "email": "james@gmail.com",
+      "gender": "male",
+      "dob": "2024-01-18",
       "password": "123456"
     }
   ],
   "details": [
     {
-      "email": "bshridhar27@gmail.com",
-      "list": [
-        "one",
-        "two",
-        "three",
-        "four"
-      ],
-      "id": "69c5"
-    },
-    {
-      "email": "varsha@gmail.com",
-      "list": [
-        "six",
-        "eleven",
-        "ten"
-      ],
-      "id": "02ea"
-    },
-    {
-      "id": "3be3",
-      "email": "xyz@gmail.com",
+      "id": "1f70",
+      "email": "admin@gmail.com",
       "list": []
     },
     {
-      "id": "a47b",
-      "email": "1@c",
+      "id": "b775",
+      "email": "j@gmail.com",
       "list": [
-        "six",
-        "seven",
-        "ten",
-        "one",
-        "four",
-        "five",
-        "six",
-        "seve",
-        "eight",
-        "nine",
-        "ten",
-        "elev"
+        "Welcome",
+        "Angular Framework"
       ]
     },
     {
-      "id": "d5b8",
+      "id": "e11a",
       "email": "varshamgvviet@gmail.com",
       "list": [
-        "Varsha MG",
+        "Varsha Gowda  MG",
         "Skandana",
         "Spoorthi",
         "Sanjana",
         "MES  School"
+      ]
+    },
+    {
+      "id": "9627",
+      "email": "james@gmail.com",
+      "list": [
+        "Angular Fundamentals"
       ]
     }
   ]

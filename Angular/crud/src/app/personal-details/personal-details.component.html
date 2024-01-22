@@ -1,0 +1,54 @@
+<nav class="navbar">
+
+<button *ngIf="buttonStatus" type="submit"  class="btn btn-secondary" (click)="rollBack()">Back</button>
+<button *ngIf="!buttonStatus" type="submit"  class="btn btn-secondary" (click)="goBack()">Back to user</button>
+
+<button *ngIf="!buttonStatus" type="submit" class="btn btn-danger" (click)="logout()">Logout</button>
+</nav>
+<form [formGroup]="myForm" (ngSubmit)="onClick()">
+
+    <div>
+        <label for="">First Name: </label>
+        <input class="input" type="text" id="fname" formControlName="firstName">
+    </div>
+
+    <div>
+        <label for="">Last Name: </label>
+        <input class="input" type="text" id="lname" formControlName="lastName">
+    </div>
+
+    <div>
+        <label for="">Email: </label>
+        <input class="input" type="email" id="email" formControlName="email" readonly>
+    </div>
+
+    <div>
+        <label for="">Gender:</label>
+        <div>
+            <label for="">Male</label>
+            <input class="input" type="radio" id="male" [checked]="userDetails[0].gender=='male'" value="male"
+                formControlName="gender">
+        </div>
+
+        <div>
+            <label for="">Female</label>
+            <input class="input" type="radio" id="female" [checked]="userDetails[0].gender=='female'" value="female"
+                formControlName="gender">
+        </div>
+    </div>
+
+    <div>
+        <label for="">Date of Birth: </label>
+        <input class="input" type="date" id="date" formControlName="dob">
+    </div>
+
+    <div>
+        <label for="">Password:</label>
+        <input class="input" type="password" id="password" formControlName="password">
+    </div>
+
+    <div>
+        <button type="submit"class="btn btn-success" >Update</button>
+    </div>
+
+</form>

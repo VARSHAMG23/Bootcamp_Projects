@@ -11,6 +11,8 @@ export class DataService {
   //Declares variables to store user email and user id.
   userEmail:any;
   userId:any;
+  display:any=false;
+  isLogged=false;
 
   
 
@@ -59,6 +61,21 @@ export class DataService {
   
     return this.http.delete(url);
 
+  }
+  buttonControl(){
+    this.display=true;
+  }
+  buttonStatus(){
+    return this.display
+  }
+
+  loggedIn(){
+    this.isLogged= true;
+  }
+
+  isLoggedIn(): boolean{
+   
+    return this.isLogged
   }
 
 }

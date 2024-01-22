@@ -1,30 +1,65 @@
+<nav class="navbar">
+  <h1 class="_heading">To-do List!</h1>
+  <div class="d-flex">
+    <button class="_button" type="submit" (click)="addData()">Add Task</button>
+    <!-- <button *ngIf="buttonStatus" type="submit" (click)="rollBack()">Back</button> -->
+    <button
+      class="_button"
+      type="submit"
+      *ngIf="!buttonStatus"
+      (click)="logout()"
+    >
+      Logout</button
+    >&nbsp;<button class="_button" type="submit" (click)="updateProfile()">
+      Profile
+    </button>
+    <button class="btn btn-danger" (click)="deleteAccount()">
+      Delete USer
+    </button>
+  </div>
+</nav>
+<br />
+<br />
 
+<!-- Input field for adding a new item to the list -->
+<div *ngIf="clicked" class="container_1">
+  <textarea class="input" name="task" [(ngModel)]="assign"></textarea>
+  <!-- <input  class="input" type="text-area" name="task" [(ngModel)]="assign"> -->
+  <br />
+  <br />
+  <input class="button_1" (click)="onClick()" type="button" value="Click Me" />
+</div>
 
-<p>Welcome to HOME PAGE</p>
-<button (click)="deleteAccount()">Delete USer</button>
 <div *ngIf="userDetails && userDetails.length > 0">
-
-<!-- Uses *ngFor to iterate over the list in the first element of userDetails array. i is the index of the current iteration. -->
-  <div *ngFor="let details of userDetails[0]?.list,let i=index">
-    <div>
-        <h1>{{ details }}</h1>
-        <div *ngIf="details">
-        <button type="submit" (click)="deleteItem(i)">Delete</button>
-        <button type="submit" (click)="updateDisplay(i,details)">Update</button>
-
-        <!-- Display input field and button for updating an item if display is true and index matches displayIndex -->
-
-        <div *ngIf="display && i=== displayIndex">
-        <input type="text" [(ngModel)]="updatingItem"/>
-        <button type="submit" (click)="updateItem()">Submit</button>
+  <!-- Uses *ngFor to iterate over the list in the first element of userDetails array. i is the index of the current iteration. -->
+  <div *ngFor="let details of userDetails[0]?.list; let i = index">
+    <div class="container">
+      <h6>{{ details }}</h6>
+      <div *ngIf="details">
+        <div class="button-container">
+          <button  class="btn btn-danger mt-2" type="submit" (click)="deleteItem(i)">
+            Delete
+          </button>
+          <button
+            class="button_2 mt-2"
+            type="submit"
+            (click)="updateDisplay(i, details)"
+          >
+            Update
+          </button>
         </div>
-    </div>
+
+        <!-- <button type="submit" (click)="personal()">Personal Info</button> -->
+        <!-- Display input field and button for updating an item if display is true and index matches displayIndex -->
+        <br />
+        <div *ngIf="display && i === displayIndex" class="container_1">
+          <textarea class="input" [(ngModel)]="updatingItem"></textarea>
+          <button class="button_1" type="submit" (click)="updateItem()">
+            Submit
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-<br>
-<!-- Input field for adding a new item to the list -->
-<input type="text" name="task" [(ngModel)]="assign">
-<br>
-<br>
-<input (click)="onClick()" type="button" value="Click Me">
+<br />

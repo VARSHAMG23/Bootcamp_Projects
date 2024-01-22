@@ -212,6 +212,8 @@ export class UserpageComponent implements OnInit {
   userId:any;  // Variable to store user ID
   display = false; // Flag to control the display of an element
   displayIndex: any; // Variable to store the index for display
+  buttonStatus:any;
+  clicked:any=false;
 
   // Define URLs for API endpoints 
 
@@ -238,7 +240,7 @@ export class UserpageComponent implements OnInit {
     this.dataService.getData(`${this.myUrl}?email=${this.email}`).subscribe((response)=>{
     // Assign the response (user details) to the userDetails property
     this.userDetails=response;
-
+    this.buttonStatus=this.dataService.buttonStatus();
       
   })
   
@@ -374,5 +376,26 @@ this.loading();: Calls the 'loading()' method to refresh user details after upda
     this.router.navigateByUrl('signup')
   }
   
+ rollBack(){
+    this.buttonStatus = false;
+    this.router.navigateByUrl('admin');
+ }
 
+ logout(){
+  
+  this.router.navigateByUrl('login')
+ }
+
+ updateProfile(){
+  
+ this.router.navigateByUrl('personal')
+
+ }
+
+ addData(){
+  if(!this.clicked)
+    this.clicked=true
+  else
+    this.clicked=false
+}
 }

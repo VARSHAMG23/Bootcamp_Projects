@@ -1,0 +1,16 @@
+
+<nav class="navbar">
+    <button type="submit" (click)="logout()" class="btn btn-danger">Logout</button></nav>
+
+<div *ngFor="let detail of usersData;let i=index">
+    <div class="container">
+        <div >
+            <h6>{{detail.email}}</h6>
+        </div>
+        <div class="button-container">
+            <button  class="_button mt-2" type="submit" (click)="viewUser(detail.email,detail.id)">View list</button>&nbsp;
+            <button  class="_button mt-2"  type="submit" (click)="viewDetails(detail.email,detail.id)">View user</button>
+
+        </div>
+    </div>
+</div>

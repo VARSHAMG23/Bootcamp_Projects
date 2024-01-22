@@ -44,16 +44,21 @@ export class LoginComponent implements OnInit {
         if(data.password==this.myForm.value['password']){
           console.log("Success");
           alert("Login Success");
-
+        this.dataService.loggedIn()
+        }
           // Call the 'getDetails' method from 'dataService' to store user details
 
           this.dataService.getDetails(this.myForm.value['email'],data.id)
           this.router.navigateByUrl('/userpage')
+          if(data.email=="admin@gmail.com"){
+          this.router.navigateByUrl("/admin");
+            
       }
-      else{
-        alert("Wrong password,Try again");
-      }
+      // else{
+      //   alert("Wrong password,Try again");
+      // }
 
+     
     }
  }
 

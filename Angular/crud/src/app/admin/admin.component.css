@@ -1,0 +1,47 @@
+.navbar{
+    background-color:rgb(54, 54, 54); 
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+._button{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    background-color: rgb(177, 174, 174);
+}
+
+._button:hover{
+    background-color: rgb(208, 237, 237);
+}
+
+.btn{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.container {
+    width: 70%;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    display:flex;
+    justify-content: space-between;
+}
+

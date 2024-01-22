@@ -13,6 +13,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { UserpageComponent } from './userpage/userpage.component';
 import { FormsModule } from '@angular/forms';
+import { AdminComponent } from './admin/admin.component';
+import { PersonalDetailsComponent } from './personal-details/personal-details.component';
 
 
 @NgModule({
@@ -22,6 +24,8 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     PagenotfoundComponent,
     UserpageComponent,
+    AdminComponent,
+    PersonalDetailsComponent,
    
   ],
   imports: [
