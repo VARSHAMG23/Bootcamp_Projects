@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder,FormGroup,Validators } from '@angular/forms';
+import { UntypedFormBuilder,UntypedFormGroup,Validators } from '@angular/forms';
 import {Router} from '@angular/router';
 import { DataService } from '../services/data.service';
 import { HttpClient } from '@angular/common/http';
@@ -14,8 +14,8 @@ export class LoginComponent implements OnInit {
   myUrl="http://localhost:3000/users"
   
   //Initialize FormGroup , Form is of type FormGroup
-  myForm!: FormGroup;
-  constructor(private fb:FormBuilder,private router:Router,private dataService:DataService,private http:HttpClient ) {
+  myForm!: UntypedFormGroup;
+  constructor(private fb:UntypedFormBuilder,private router:Router,private dataService:DataService,private http:HttpClient ) {
   // Create a FormGroup with email and password fields
     this.myForm=this.fb.group({
 

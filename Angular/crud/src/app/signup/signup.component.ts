@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 //For Reactive Forms
-import { FormBuilder,FormGroup,FormControlName,Validators } from '@angular/forms';
+import { UntypedFormBuilder,UntypedFormGroup,FormControlName,Validators } from '@angular/forms';
 import {Router} from '@angular/router';
 import { DataService } from '../services/data.service';
 
@@ -12,7 +12,7 @@ import { DataService } from '../services/data.service';
 export class SignupComponent implements OnInit {
 
 //Initialize FormGroup , Form is of type FormGroup
-  myForm!: FormGroup;
+  myForm!: UntypedFormGroup;
   userData:any;
   myObj={
     firstName:'',
@@ -31,7 +31,7 @@ myUserDetails={
   list:[]
 }
 
-  constructor(private fb:FormBuilder, private router:Router,private dataService:DataService ) {
+  constructor(private fb:UntypedFormBuilder, private router:Router,private dataService:DataService ) {
     
     this.myForm=this.fb.group({
 
