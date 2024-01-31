@@ -1,7 +1,7 @@
 <nav class="navbar">
   <h1 class="_heading">To-do List!</h1>
   <div class="d-flex">
-    <button class="_button" type="submit" (click)="addData()">Add Task</button>
+    <button class="_button" type="submit" (click)="addData()"><i class="fas fa-tasks"></i>&nbsp;&nbsp;Add Task</button>
     <!-- <button *ngIf="buttonStatus" type="submit" (click)="rollBack()">Back</button> -->
     <button
       class="_button"
@@ -14,7 +14,7 @@
       Profile
     </button>
     <button class="btn btn-danger" (click)="deleteAccount()">
-      Delete USer
+      Delete Account 
     </button>
   </div>
 </nav>
@@ -38,14 +38,14 @@
       <div *ngIf="details">
         <div class="button-container">
           <button  class="btn btn-danger mt-2" type="submit" (click)="deleteItem(i)">
-            Delete
+            <i class="fas fa-trash-alt">&nbsp;Delete</i> 
           </button>
           <button
             class="button_2 mt-2"
             type="submit"
             (click)="updateDisplay(i, details)"
-          >
-            Update
+          ><i class="fas fa-edit">&nbsp;Edit</i>
+            
           </button>
         </div>
 

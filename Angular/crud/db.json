@@ -1,15 +1,6 @@
 {
   "users": [
     {
-      "id": "72d7",
-      "firstName": "Varsha",
-      "lastName": "M",
-      "email": "varshamgvviet@gmail.com",
-      "gender": "female",
-      "dob": "2001-09-23",
-      "password": "123456"
-    },
-    {
       "id": "6b48",
       "firstName": "admin",
       "lastName": "admin",
@@ -35,6 +26,15 @@
       "gender": "male",
       "dob": "2024-01-18",
       "password": "123456"
+    },
+    {
+      "id": "0e05",
+      "firstName": "Varsha",
+      "lastName": "M",
+      "email": "varshamgvviet@gmail.com",
+      "gender": "female",
+      "dob": "2001-09-23",
+      "password": "123456"
     }
   ],
   "details": [
@@ -44,29 +44,25 @@
       "list": []
     },
     {
-      "id": "b775",
-      "email": "j@gmail.com",
-      "list": [
-        "Welcome",
-        "Angular Framework"
-      ]
-    },
-    {
-      "id": "e11a",
-      "email": "varshamgvviet@gmail.com",
-      "list": [
-        "Varsha Gowda  MG",
-        "Skandana",
-        "Spoorthi",
-        "Sanjana",
-        "MES  School"
-      ]
-    },
-    {
       "id": "9627",
       "email": "james@gmail.com",
       "list": [
         "Angular Fundamentals"
+      ]
+    },
+    {
+      "id": "7f93",
+      "email": "varshamgvviet@gmail.com",
+      "list": [
+        "Angular Fundamentals",
+        "To develop an simple application"
+      ]
+    },
+    {
+      "id": "3ded",
+      "email": "j@gmail.com",
+      "list": [
+        "Angular Framework"
       ]
     }
   ]

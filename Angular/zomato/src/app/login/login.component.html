@@ -1,0 +1,26 @@
+<div class="container">
+
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="form_">
+  
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" formControlName="email" placeholder="Enter Email" class="form-control">
+      </div>
+  
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" formControlName="password" placeholder="Enter  Password" class="form-control">
+      </div>
+  
+      <div class="form-group">
+        <button *ngIf="myForm.valid" type="submit" class="btn btn-primary">Login</button>
+      </div>
+  
+      <div class="link-div">
+        <a href="javascript:void(0)" (click)="noAccount()" class="login-link">New to app?Create Account</a>
+      </div>
+  
+    </form>
+  
+  </div>
+  

@@ -84,4 +84,7 @@ myUserDetails={
      this.router.navigateByUrl('/login')
   }
 
+  noAccount(){
+    this.router.navigateByUrl('/login')
+  }
 }

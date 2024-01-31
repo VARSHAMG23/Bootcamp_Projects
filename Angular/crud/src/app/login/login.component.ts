@@ -67,4 +67,8 @@ if(!user){
   this.router.navigateByUrl('/signup')
 }
   }
+
+  noAccount(){
+    this.router.navigateByUrl('/signup')
+  }
 }

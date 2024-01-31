@@ -10,7 +10,7 @@ import { AuthService } from './services/auth.service';
 const routes: Routes = [
   {path: 'signup', component:SignupComponent},
   {path: 'login', component:LoginComponent},
-  {path: '', component:SignupComponent,pathMatch:'full'},
+  {path: '', component:LoginComponent,pathMatch:'full'},
   {path:'userpage', component:UserpageComponent,canActivate:[AuthService]},
   {path:'admin', component:AdminComponent,canActivate:[AuthService]},
   {path:'personal', component:PersonalDetailsComponent,canActivate:[AuthService]},

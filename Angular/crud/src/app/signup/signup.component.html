@@ -49,53 +49,64 @@
 
 </form> -->
 
+
+
+
 <div class="container">
-
- <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-    
-
-    <div>
-        <label for="">First Name: </label>
-        <input type="text" id="fname" formControlName="firstName">
-    </div>
-
-    <div>
-        <label for="">Last Name: </label>
-        <input type="text" id="lname" formControlName="lastName">
-    </div>
-
-    <div>
-        <label for="">Email: </label>
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+      <!-- Email and Password fields are always visible -->
+      <div>
+        <label for="email">Email: </label>
         <input type="email" id="email" formControlName="email">
-    </div>
-
-    <div>
-        <label for="">Gender:</label>
-        <div>
-        <label for="">Male</label>    
-        <input type="radio" id="gender" value="male" formControlName="gender">
-        </div>
-
-        <div>
-        <label for="">Female</label>    
-        <input type="radio" id="gender" value="female" formControlName="gender">
-        </div>
-    </div>
-
-    <div>
-        <label for="">Date of Birth: </label>
-        <input type="date" id="date" formControlName="dob">
-    </div>
-
-    <div>
-        <label for="">Password:</label>
+      </div>
+  
+      <div>
+        <label for="password">Password:</label>
         <input type="password" id="password" formControlName="password">
-    </div>
+      </div>
+  
+      <!-- Other fields are conditionally visible based on a flag -->
+     
+        <div>
+          <label for="fname">First Name: </label>
+          <input type="text" id="fname" formControlName="firstName">
+        </div>
+  
+        <div>
+          <label for="lname">Last Name: </label>
+          <input type="text" id="lname" formControlName="lastName">
+        </div>
+  
+        <div>
+          <label for="gender">Gender:</label>
+          <div>
+            <label for="male">Male</label>
+            <input type="radio" id="male" value="male" formControlName="gender">
+          </div>
+  
+          <div>
+            <label for="female">Female</label>
+            <input type="radio" id="female" value="female" formControlName="gender">
+          </div>
+        </div>
+  
+        <div>
+          <label for="date">Date of Birth: </label>
+          <input type="date" id="date" formControlName="dob">
+        </div>
+      
+  
+      <div>
+        <button type="submit" [disabled]="!myForm.valid">Register</button>
+      </div>
+      <br>
+  
+      <div class="div">
+        <a href="javascript:void(0)" (click)="noAccount()">Already have an account ? Login</a>
+      </div>
+    </form>
+  </div>
+  
+  
 
-    <div>
-        <button *ngIf="myForm.valid" type="submit">SignUp</button>
-    </div>
-
-</form>
-</div>
 

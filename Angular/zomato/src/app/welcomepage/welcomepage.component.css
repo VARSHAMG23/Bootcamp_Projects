@@ -1,0 +1,32 @@
+.navbar{
+    background-color:white; 
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.row{
+    background-image: url("/src/assets/images/home.jpg");
+}
+
+.btn{
+    align-items: center;
+    width: 60%;
+    height: 8vh;
+}
+
+._btn{
+    align-items: center;
+    width: 60%;
+    height: 8vh;
+    background-color: aliceblue;
+    border: 1px solid blue;
+    color: blue;
+    border-radius: 5px;
+}
+img{
+    width:100%;
+    height: 50vh;
+    
+}

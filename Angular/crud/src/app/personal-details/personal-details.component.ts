@@ -26,7 +26,7 @@ export class PersonalDetailsComponent implements OnInit {
 
   myUrl='http://localhost:3000/details';
   myUserUrl='http://localhost:3000/users'
-  // http://localhost:3000/users?email=bshridhar27@gmail.com
+  
   
   userDetails:any={};
 
@@ -76,12 +76,6 @@ export class PersonalDetailsComponent implements OnInit {
 
       }
     );
-    
-    
-    
-    
-
-
 }
   loading(){
     var dataReceived=this.dataService.receivedDetails();
