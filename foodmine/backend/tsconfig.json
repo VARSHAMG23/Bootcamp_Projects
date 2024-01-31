@@ -1,0 +1,14 @@
+// One time configuration
+
+{
+    "compilerOptions": {
+      "module": "CommonJS",
+      "moduleResolution": "node",
+      "strict": true,
+      "outDir": "./built",  //built js files are put inside it 
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
+      "esModuleInterop": true
+    },
+    "include": ["src/**/*"], //all ts file src folder needs to be transfered into js files
+}

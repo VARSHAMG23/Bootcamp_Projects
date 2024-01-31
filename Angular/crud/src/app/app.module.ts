@@ -4,18 +4,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
-import {HttpClientModule} from '@angular/common/http';
-
-
-
-//For Reactive Fornms
-import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';  // Uncomment this line for reactive forms
+import { FormsModule } from '@angular/forms';  // Uncomment this line for template-driven forms
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { UserpageComponent } from './userpage/userpage.component';
-import { FormsModule } from '@angular/forms';
 import { AdminComponent } from './admin/admin.component';
 import { PersonalDetailsComponent } from './personal-details/personal-details.component';
-
 
 @NgModule({
   declarations: [
@@ -26,15 +21,13 @@ import { PersonalDetailsComponent } from './personal-details/personal-details.co
     UserpageComponent,
     AdminComponent,
     PersonalDetailsComponent,
-   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
-   
+    FormsModule,  // Uncomment this line for template-driven forms
   ],
   providers: [],
   bootstrap: [AppComponent]
