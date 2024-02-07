@@ -1,0 +1,7 @@
+<div>
+
+    <!-- (keyup.enter)="search(s.value)": This is an event binding that listens for the "keyup" event and, when the Enter key is pressed, it calls the search method from the component with the input value as an argument. -->
+    <!-- [value]="searchTerm": This binds the input field's value to the searchTerm property from the component. It initializes the input field value with the current value of searchTerm -->
+    <input #s type="text" placeholder="Search Food Here!" (keyup.enter)="search(s.value)" [value]="searchTerm"/>
+    <button (click)="search(s.value)">Search</button>
+</div>
